@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: PR Workflow
 
 on:
@@ -9,3 +10,65 @@ jobs:
 
     steps:
       - run: echo "Workflow is working on Pull Request!"
+=======
+# name: My First Workflow
+
+# on: push
+
+# jobs:
+#   say-hello:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Print message
+#         run: |
+#           echo "Hello, Github Actions!"
+#           echo "Ramanjot Kaur"
+
+name: Lint and Test
+
+on:
+  push:
+    branches:
+      - main
+      - feature/test-workflow
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint   # 👈 ensures lint runs first
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test -- --passWithNoTests
+>>>>>>> a63fb31 (fix: add jest for CI)

@@ -1,0 +1,27 @@
+{
+  "name": "fsd-2189",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamanjotKaur7856/fsd-2189.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RamanjotKaur7856/fsd-2189/issues"
+  },
+  "homepage": "https://github.com/RamanjotKaur7856/fsd-2189#readme",
+  "devDependencies": {
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "jest": "^30.3.0"
+  }
+}
